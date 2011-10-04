@@ -1,0 +1,21 @@
+<%= form_for(@squish) do |f| %>
+  <% if @squish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@squish.errors.count, "error") %> prohibited this squish from being saved:</h2>
+
+      <ul>
+      <% @squish.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :squash %><br />
+    <%= f.text_field :squash %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

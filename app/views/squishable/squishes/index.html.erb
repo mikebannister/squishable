@@ -1,0 +1,23 @@
+<h1>Listing squishes</h1>
+
+<table>
+  <tr>
+    <th>Squash</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @squishes.each do |squish| %>
+  <tr>
+    <td><%= squish.squash %></td>
+    <td><%= link_to 'Show', squish %></td>
+    <td><%= link_to 'Edit', edit_squish_path(squish) %></td>
+    <td><%= link_to 'Destroy', squish, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Squish', new_squish_path %>
